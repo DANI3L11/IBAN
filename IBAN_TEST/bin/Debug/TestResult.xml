@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll" total="1" errors="1" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2019-05-14" time="17:02:10">
+  <environment nunit-version="2.6.2.12296" clr-version="2.0.50727.8940" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.2\bin" machine-name="LAPTOP-GF3GF1G0" user="garci" user-domain="LAPTOP-GF3GF1G0" />
+  <culture-info current-culture="es-ES" current-uiculture="es-ES" />
+  <test-suite type="Assembly" name="C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll" executed="True" result="Failure" success="False" time="0.144" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="IBAN_TEST" executed="True" result="Failure" success="False" time="0.134" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="IBAN_TEST" executed="True" result="Failure" success="False" time="0.134" asserts="0">
+            <results>
+              <test-case name="IBAN_TEST.IBAN_TEST.CrearIban" executed="True" result="Error" success="False" time="0.123" asserts="0">
+                <failure>
+                  <message><![CDATA[System.ArgumentOutOfRangeException : El argumento especificado está fuera del intervalo de valores válidos.
+Nombre del parámetro: startIndex]]></message>
+                  <stack-trace><![CDATA[en System.String.Insert(Int32 startIndex, String value)
+en IBAN.IBANP.CrearIban(String cuenta) en c:\Users\garci\Desktop\IBAN\IBAN\IBAN.cs:línea 35
+en IBAN_TEST.IBAN_TEST.CrearIban() en c:\Users\garci\Desktop\IBAN\IBAN_TEST\Program.cs:línea 20
+]]></stack-trace>
+                </failure>
+              </test-case>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

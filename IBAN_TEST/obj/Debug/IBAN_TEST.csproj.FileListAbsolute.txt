@@ -1,0 +1,14 @@
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.csprojResolveAssemblyReference.cache
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll.config
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.pdb
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.framework.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN.pdb
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.framework.xml
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.pdb
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.pdb
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.engine.dll
+C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.engine.api.dll

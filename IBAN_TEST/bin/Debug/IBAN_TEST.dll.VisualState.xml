@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1002]C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll</TopNode>
+  <SelectedNode>[0-1000]IBAN_TEST.IBAN_TEST</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1002]C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll" Expanded="true" />
+    <Node UniqueName="[0-1003]IBAN_TEST" Expanded="true" />
+    <Node UniqueName="[0-1000]IBAN_TEST.IBAN_TEST" Expanded="true" />
+  </Nodes>
+</VisualState>
