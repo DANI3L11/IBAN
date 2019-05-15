@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace IBAN
 {
+    // EXEPCIONES
+    public class CuentaCortaException : Exception { }
+    public class CaracteresCuentaException : Exception { }
+
     public class IBANP
     {
         // Variables
@@ -26,10 +30,22 @@ namespace IBAN
         {
             int calculoIban;
             // Paso preliminar
+
+            if (cuenta.Length != 20)
+                throw new CuentaCortaException();
+
             // Paso 1
             // Paso 2
             string ibanTmp = cuenta + "142800";
-            calculoIban = int.Parse(ibanTmp);
+            try
+            {
+                calculoIban = int.Parse(ibanTmp);
+            }
+            catch
+            {
+                throw new CaracteresCuentaException();
+            }
+            
             calculoIban = calculoIban % 97;
             calculoIban = 98 - calculoIban;
 

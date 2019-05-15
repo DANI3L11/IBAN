@@ -38,5 +38,37 @@ namespace IBAN_TEST
             bool resultado = iban.ComprobarIban(iban_cuenta);
             Assert.AreEqual(false, resultado);
         }
+
+        [Test]
+        public void LongitudCuentaIncorrecta()
+        {
+            string cuenta = "0120345030000067890";
+            IBANP iban = new IBANP();           
+            try
+            {
+                string resultado = iban.CrearIban(cuenta);
+                Assert.Fail("Falla porque no se puede hacer los calculos con ese número");
+            }
+            catch
+            {
+                
+            }
+        }
+
+        [Test]
+        public void CaracteresNoValidosEnCuenta()
+        {
+            string cuenta = "00120345030AB0067890";
+            IBANP iban = new IBANP();
+            try
+            {
+                string resultado = iban.CrearIban(cuenta);
+                Assert.Fail("Falla porque no todos los caracteres son numericos");
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
