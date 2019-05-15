@@ -10,8 +10,6 @@ namespace IBAN
     {
         // Variables
         private string iban;
-        private string E = "14";
-        private string S = "28";
 
         // Propiedades
         public string Iban
@@ -26,16 +24,28 @@ namespace IBAN
         // Métodos
         public string CrearIban(string cuenta)
         {
+            int calculoIban;
             // Paso preliminar
             // Paso 1
-            string ibanTmp = cuenta + "ES00";
-            
             // Paso 2
-            ibanTmp = ibanTmp.Substring(19, 2);
-            ibanTmp = ibanTmp.Insert(19, E);
-            ibanTmp = ibanTmp.Insert(21, S);
+            string ibanTmp = cuenta + "142800";
+            calculoIban = int.Parse(ibanTmp);
+            calculoIban = calculoIban % 97;
+            calculoIban = 98 - calculoIban;
 
-            return ibanTmp;
+            if (calculoIban > -1 && calculoIban < 10)
+                iban = "ES0" + calculoIban + cuenta;
+            else
+                iban = "ES" + calculoIban + cuenta;
+
+            return iban;
+        }
+
+        public bool ComprobarIban()
+        {
+
+
+
         }
 
     }

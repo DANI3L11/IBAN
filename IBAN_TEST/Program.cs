@@ -18,7 +18,15 @@ namespace IBAN_TEST
             string cuenta = "00120345030000067890";
             IBANP iban = new IBANP();
             string resultado = iban.CrearIban(cuenta);
-            Assert.AreEqual("00120345030000067890142800", resultado);
+            Assert.AreEqual("ES0700120345030000067890", resultado);
+        }
+
+        [Test]
+        public void ComprobarIban()
+        {
+            IBANP iban = new IBANP();
+            bool resultado = iban.ComprobarIban();
+            Assert.AreEqual("ES0700120345030000067890", resultado);
         }
     }
 }

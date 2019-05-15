@@ -4,3 +4,4 @@ C:\Users\garci\Desktop\IBAN\IBAN\obj\Debug\IBAN.pdb
 C:\Users\garci\Desktop\IBAN\IBAN\bin\Debug\IBAN.dll.config
 C:\Users\garci\Desktop\IBAN\IBAN\bin\Debug\IBAN.dll
 C:\Users\garci\Desktop\IBAN\IBAN\obj\Debug\IBAN.dll
+C:\Users\garci\Desktop\IBAN\IBAN\obj\Debug\IBAN.csprojResolveAssemblyReference.cache
