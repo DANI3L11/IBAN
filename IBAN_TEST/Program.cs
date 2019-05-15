@@ -22,11 +22,21 @@ namespace IBAN_TEST
         }
 
         [Test]
-        public void ComprobarIban()
+        public void ComprobarIbanCorrecto()
         {
             IBANP iban = new IBANP();
-            bool resultado = iban.ComprobarIban();
-            Assert.AreEqual("ES0700120345030000067890", resultado);
+            string iban_cuenta = "ES0700120345030000067890";
+            bool resultado = iban.ComprobarIban(iban_cuenta);
+            Assert.AreEqual(true, resultado);
+        }
+
+        [Test]
+        public void ComprobarIbanError()
+        {
+            IBANP iban = new IBANP();
+            string iban_cuenta = "ES0200120345030000067890";
+            bool resultado = iban.ComprobarIban(iban_cuenta);
+            Assert.AreEqual(false, resultado);
         }
     }
 }

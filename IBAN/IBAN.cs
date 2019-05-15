@@ -41,11 +41,11 @@ namespace IBAN
             return iban;
         }
 
-        public bool ComprobarIban()
+        public bool ComprobarIban(string iban)
         {
             int calculo = 0;
-            string final = Iban.Substring(2, 2);
-            string cuenta = Iban.Substring(4, 20);
+            string final = iban.Substring(2, 2);
+            string cuenta = iban.Substring(4, 20);
 
             cuenta = cuenta + "1428" + final;
 
