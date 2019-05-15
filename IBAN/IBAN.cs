@@ -43,9 +43,18 @@ namespace IBAN
 
         public bool ComprobarIban()
         {
+            int calculo = 0;
+            string final = Iban.Substring(2, 2);
+            string cuenta = Iban.Substring(4, 20);
 
+            cuenta = cuenta + "1428" + final;
 
+            calculo = 97 % int.Parse(cuenta);
 
+            if (calculo == 1)
+                return true;
+            else
+                return false;
         }
 
     }
