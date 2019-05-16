@@ -5,3 +5,9 @@ C:\Users\garci\Desktop\IBAN\IBAN\bin\Debug\IBAN.dll.config
 C:\Users\garci\Desktop\IBAN\IBAN\bin\Debug\IBAN.dll
 C:\Users\garci\Desktop\IBAN\IBAN\obj\Debug\IBAN.dll
 C:\Users\garci\Desktop\IBAN\IBAN\obj\Debug\IBAN.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\bin\Debug\IBAN.dll.config
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\bin\Debug\IBAN.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\bin\Debug\IBAN.pdb
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\obj\Debug\IBAN.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\obj\Debug\IBAN.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN\obj\Debug\IBAN.pdb

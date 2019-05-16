@@ -29,6 +29,7 @@ namespace IBAN
         public string CrearIban(string cuenta)
         {
             int calculoIban;
+            decimal ibanFinal;
             // Paso preliminar
 
             if (cuenta.Length != 20)
@@ -39,33 +40,33 @@ namespace IBAN
             string ibanTmp = cuenta + "142800";
             try
             {
-                calculoIban = int.Parse(ibanTmp);
+                ibanFinal = decimal.Parse(ibanTmp);
             }
             catch
             {
                 throw new CaracteresCuentaException();
             }
-            
-            calculoIban = calculoIban % 97;
-            calculoIban = 98 - calculoIban;
 
-            if (calculoIban > -1 && calculoIban < 10)
-                iban = "ES0" + calculoIban + cuenta;
+            ibanFinal = ibanFinal % 97;
+            ibanFinal = 98 - ibanFinal;
+
+            if (ibanFinal > -1 && ibanFinal < 10)
+                iban = "ES0" + ibanFinal + cuenta;
             else
-                iban = "ES" + calculoIban + cuenta;
+                iban = "ES" + ibanFinal + cuenta;
 
             return iban;
         }
 
         public bool ComprobarIban(string iban)
         {
-            int calculo = 0;
+            decimal calculo = 0;
             string final = iban.Substring(2, 2);
             string cuenta = iban.Substring(4, 20);
 
             cuenta = cuenta + "1428" + final;
 
-            calculo = 97 % int.Parse(cuenta);
+            calculo = decimal.Parse(cuenta) % 97;
 
             if (calculo == 1)
                 return true;

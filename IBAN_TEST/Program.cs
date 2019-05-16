@@ -43,7 +43,7 @@ namespace IBAN_TEST
         public void LongitudCuentaIncorrecta()
         {
             string cuenta = "0120345030000067890";
-            IBANP iban = new IBANP();           
+            IBANP iban = new IBANP();
             try
             {
                 string resultado = iban.CrearIban(cuenta);
@@ -51,7 +51,7 @@ namespace IBAN_TEST
             }
             catch
             {
-                
+
             }
         }
 

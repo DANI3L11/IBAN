@@ -12,3 +12,17 @@ C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.dll
 C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.pdb
 C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.engine.dll
 C:\Users\garci\Desktop\IBAN\IBAN_TEST\bin\Debug\nunit.engine.api.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\NUnit3.TestAdapter.pdb
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\nunit.engine.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\nunit.engine.api.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll.config
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\IBAN_TEST.pdb
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\IBAN.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\nunit.framework.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\IBAN.pdb
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\bin\Debug\nunit.framework.xml
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.csprojResolveAssemblyReference.cache
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.dll
+D:\alumno1718\Escritorio\IBAN_PRUEBAS\IBAN\IBAN_TEST\obj\Debug\IBAN_TEST.pdb
