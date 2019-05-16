@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace IBAN
 {
+
     // EXEPCIONES
     public class CuentaCortaException : Exception { }
     public class CaracteresCuentaException : Exception { }
 
     public class IBANP
     {
+        // Constantes
+        const string spainPrefix = "142800";
+
         // Variables
         private string iban;
 
@@ -26,36 +30,67 @@ namespace IBAN
         public IBANP() { }
 
         // Métodos
-        public string CrearIban(string cuenta)
+        public static string calcularIban(string cuenta)
         {
-            int calculoIban;
-            decimal ibanFinal;
-            // Paso preliminar
+            // Variables
+            string[] partesCCC = null;
+            int iResultado = 0;
 
+            // Calculamos el IBAN
+            cuenta = cuenta.Trim();
             if (cuenta.Length != 20)
-                throw new CuentaCortaException();
+                return "La CCC debe tener 20 dígitos";
 
-            // Paso 1
-            // Paso 2
-            string ibanTmp = cuenta + "142800";
-            try
-            {
-                ibanFinal = decimal.Parse(ibanTmp);
-            }
-            catch
-            {
-                throw new CaracteresCuentaException();
-            }
+            // Le añadimos el código del pais al cc
+            cuenta = cuenta + spainPrefix;
 
-            ibanFinal = ibanFinal % 97;
-            ibanFinal = 98 - ibanFinal;
+            // Troceamos el ccc en partes (26 digitos)
+            partesCCC = new string[5];
+            partesCCC[0] = cuenta.Substring(0, 5);
+            partesCCC[1] = cuenta.Substring(5, 5);
+            partesCCC[2] = cuenta.Substring(10, 5);
+            partesCCC[3] = cuenta.Substring(15, 5);
+            partesCCC[4] = cuenta.Substring(20, 6);
 
-            if (ibanFinal > -1 && ibanFinal < 10)
-                iban = "ES0" + ibanFinal + cuenta;
-            else
-                iban = "ES" + ibanFinal + cuenta;
+            for (int i = -1; i < partesCCC.Length - 1; i++)
+                iResultado = int.Parse(iResultado + partesCCC[i + 1]) % 97;
 
-            return iban;
+            // Le restamos el resultado a 98
+            int iRestoIban = 98 - iResultado;
+            if (iRestoIban < 10)
+                return "ES0" + iRestoIban + cuenta;
+           
+            return "ES" + iRestoIban + cuenta;
+
+
+            //int calculoIban;
+            //decimal ibanFinal;
+            //// Paso preliminar
+
+            //if (cuenta.Length != 20)
+            //    throw new CuentaCortaException();
+
+            //// Paso 1
+            //// Paso 2
+            //string ibanTmp = cuenta + "142800";
+            //try
+            //{
+            //    ibanFinal = decimal.Parse(ibanTmp);
+            //}
+            //catch
+            //{
+            //    throw new CaracteresCuentaException();
+            //}
+
+            //ibanFinal = ibanFinal % 97;
+            //ibanFinal = 98 - ibanFinal;
+
+            //if (ibanFinal > -1 && ibanFinal < 10)
+            //    iban = "ES0" + ibanFinal + cuenta;
+            //else
+            //    iban = "ES" + ibanFinal + cuenta;
+
+            //return iban;
         }
 
         public bool ComprobarIban(string iban)

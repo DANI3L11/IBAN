@@ -46,7 +46,7 @@ namespace IBAN_TEST
             IBANP iban = new IBANP();
             try
             {
-                string resultado = iban.CrearIban(cuenta);
+                string resultado = iban.calcularIban(cuenta);
                 Assert.Fail("Falla porque no se puede hacer los calculos con ese número");
             }
             catch
