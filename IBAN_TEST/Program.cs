@@ -12,19 +12,18 @@ namespace IBAN_TEST
     [TestFixture]
     public class IBAN_TEST
     {
+        IBANP iban = new IBANP();
         [Test]
         public void CrearIban()
         {
             string cuenta = "00120345030000067890";
-            IBANP iban = new IBANP();
-            string resultado = iban.CrearIban(cuenta);
+            string resultado = iban.calcularIban(cuenta);
             Assert.AreEqual("ES0700120345030000067890", resultado);
         }
 
         [Test]
         public void ComprobarIbanCorrecto()
         {
-            IBANP iban = new IBANP();
             string iban_cuenta = "ES0700120345030000067890";
             bool resultado = iban.ComprobarIban(iban_cuenta);
             Assert.AreEqual(true, resultado);
@@ -33,7 +32,6 @@ namespace IBAN_TEST
         [Test]
         public void ComprobarIbanError()
         {
-            IBANP iban = new IBANP();
             string iban_cuenta = "ES0200120345030000067890";
             bool resultado = iban.ComprobarIban(iban_cuenta);
             Assert.AreEqual(false, resultado);
@@ -43,7 +41,6 @@ namespace IBAN_TEST
         public void LongitudCuentaIncorrecta()
         {
             string cuenta = "0120345030000067890";
-            IBANP iban = new IBANP();
             try
             {
                 string resultado = iban.calcularIban(cuenta);
@@ -59,10 +56,9 @@ namespace IBAN_TEST
         public void CaracteresNoValidosEnCuenta()
         {
             string cuenta = "00120345030AB0067890";
-            IBANP iban = new IBANP();
             try
             {
-                string resultado = iban.CrearIban(cuenta);
+                string resultado = iban.calcularIban(cuenta);
                 Assert.Fail("Falla porque no todos los caracteres son numericos");
             }
             catch

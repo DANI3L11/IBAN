@@ -30,7 +30,7 @@ namespace IBAN
         public IBANP() { }
 
         // Métodos
-        public static string calcularIban(string cuenta)
+        public string calcularIban(string cuenta)
         {
             // Variables
             string[] partesCCC = null;
@@ -61,36 +61,6 @@ namespace IBAN
                 return "ES0" + iRestoIban + cuenta;
            
             return "ES" + iRestoIban + cuenta;
-
-
-            //int calculoIban;
-            //decimal ibanFinal;
-            //// Paso preliminar
-
-            //if (cuenta.Length != 20)
-            //    throw new CuentaCortaException();
-
-            //// Paso 1
-            //// Paso 2
-            //string ibanTmp = cuenta + "142800";
-            //try
-            //{
-            //    ibanFinal = decimal.Parse(ibanTmp);
-            //}
-            //catch
-            //{
-            //    throw new CaracteresCuentaException();
-            //}
-
-            //ibanFinal = ibanFinal % 97;
-            //ibanFinal = 98 - ibanFinal;
-
-            //if (ibanFinal > -1 && ibanFinal < 10)
-            //    iban = "ES0" + ibanFinal + cuenta;
-            //else
-            //    iban = "ES" + ibanFinal + cuenta;
-
-            //return iban;
         }
 
         public bool ComprobarIban(string iban)
