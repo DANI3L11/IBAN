@@ -13,34 +13,34 @@ namespace IBAN_TEST
     public class IBAN_TEST
     {
         IBANP iban = new IBANP();
+        string cuenta = "00120345030000067890";
+        string cuenta_Iban = "ES0700120345030000067890";
         [Test]
         public void CrearIban()
         {
-            string cuenta = "00120345030000067890";
             string resultado = iban.calcularIban(cuenta);
-            Assert.AreEqual("ES0700120345030000067890", resultado);
+            Assert.AreEqual(cuenta_Iban, resultado);
         }
 
         [Test]
         public void ComprobarIbanCorrecto()
         {
-            string iban_cuenta = "ES0700120345030000067890";
-            bool resultado = iban.ComprobarIban(iban_cuenta);
+            bool resultado = iban.ComprobarIban(cuenta_Iban);
             Assert.AreEqual(true, resultado);
         }
 
         [Test]
         public void ComprobarIbanError()
         {
-            string iban_cuenta = "ES0200120345030000067890";
-            bool resultado = iban.ComprobarIban(iban_cuenta);
+            string iban_cuenta_Erronea = "ES0200120345030000067890";
+            bool resultado = iban.ComprobarIban(iban_cuenta_Erronea);
             Assert.AreEqual(false, resultado);
         }
 
         [Test]
         public void LongitudCuentaIncorrecta()
         {
-            string cuenta = "0120345030000067890";
+            string cuenta_Erronea = "0120345030000067890";
             try
             {
                 string resultado = iban.calcularIban(cuenta);
@@ -55,10 +55,10 @@ namespace IBAN_TEST
         [Test]
         public void CaracteresNoValidosEnCuenta()
         {
-            string cuenta = "00120345030AB0067890";
             try
             {
-                string resultado = iban.calcularIban(cuenta);
+                string cuenta_Caracteres = "0120345030abn067890";
+                string resultado = iban.calcularIban(cuenta_Caracteres);
                 Assert.Fail("Falla porque no todos los caracteres son numericos");
             }
             catch

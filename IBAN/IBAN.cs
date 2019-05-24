@@ -39,7 +39,8 @@ namespace IBAN
             // Calculamos el IBAN
             cuenta = cuenta.Trim();
             if (cuenta.Length != 20)
-                return "La CCC debe tener 20 dígitos";
+                throw new CuentaCortaException();
+
 
             // Le añadimos el código del pais al cc
             cuenta = cuenta + spainPrefix;
@@ -53,12 +54,27 @@ namespace IBAN
             partesCCC[4] = cuenta.Substring(20, 6);
 
             for (int i = -1; i < partesCCC.Length - 1; i++)
-                iResultado = int.Parse(iResultado + partesCCC[i + 1]) % 97;
+            {
+                try
+                {
+                    iResultado = int.Parse(iResultado + partesCCC[i + 1]) % 97;
+                }
+                catch
+                {
+                    throw new CaracteresCuentaException();
+                }
+                
+            }
 
             // Le restamos el resultado a 98
             int iRestoIban = 98 - iResultado;
+
+            cuenta = cuenta.Substring(0, 20);
+
             if (iRestoIban < 10)
                 return "ES0" + iRestoIban + cuenta;
+
+
            
             return "ES" + iRestoIban + cuenta;
         }
