@@ -10,6 +10,7 @@ namespace IBAN
     // EXEPCIONES
     public class CuentaCortaException : Exception { }
     public class CaracteresCuentaException : Exception { }
+    public class PrefijoIbanIncorrecto : Exception { }
 
     public class IBANP
     {
@@ -82,8 +83,16 @@ namespace IBAN
         public bool ComprobarIban(string iban)
         {
             decimal calculo = 0;
+            string prefijo = iban.Substring(0, 2);
             string final = iban.Substring(2, 2);
             string cuenta = iban.Substring(4, 20);
+
+            cuenta = cuenta.Trim();
+            if (cuenta.Length != 20)
+                throw new CuentaCortaException();
+
+            if (prefijo != "ES")
+                throw new PrefijoIbanIncorrecto();
 
             cuenta = cuenta + "1428" + final;
 

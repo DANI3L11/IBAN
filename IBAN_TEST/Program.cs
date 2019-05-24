@@ -15,6 +15,7 @@ namespace IBAN_TEST
         IBANP iban = new IBANP();
         string cuenta = "00120345030000067890";
         string cuenta_Iban = "ES0700120345030000067890";
+
         [Test]
         public void CrearIban()
         {
@@ -43,8 +44,8 @@ namespace IBAN_TEST
             string cuenta_Erronea = "0120345030000067890";
             try
             {
-                string resultado = iban.calcularIban(cuenta);
-                Assert.Fail("Falla porque no se puede hacer los calculos con ese número");
+                string resultado = iban.calcularIban(cuenta_Erronea);
+                Assert.Fail("Falla porque no se puede hacer los calculos con ese número al no tener la longitud adecuada");
             }
             catch
             {
@@ -60,6 +61,36 @@ namespace IBAN_TEST
                 string cuenta_Caracteres = "0120345030abn067890";
                 string resultado = iban.calcularIban(cuenta_Caracteres);
                 Assert.Fail("Falla porque no todos los caracteres son numericos");
+            }
+            catch
+            {
+
+            }
+        }
+
+        [Test]
+        public void LongitudCuentaIbanIncorrecta()
+        {
+            string cuenta_Erronea_Iban = "ES0120345030000067890";
+            try
+            {
+                string resultado = iban.calcularIban(cuenta_Erronea_Iban);
+                Assert.Fail("Falla porque no se puede hacer los calculos con ese número al no tener la longitud adecuada");
+            }
+            catch
+            {
+
+            }
+        }
+
+        [Test]
+        public void PrefijoIbanIncorrecto()
+        {
+            string cuenta_Erronea_Iban_Prefijo = "PR0120345030000067890";
+            try
+            {
+                string resultado = iban.calcularIban(cuenta_Erronea_Iban_Prefijo);
+                Assert.Fail("El prefijo debe de ser ES");
             }
             catch
             {
